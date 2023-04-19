@@ -24,7 +24,7 @@ export const Movies = () => {
             genre={movie.genre.name}
             poster={movie.poster}
             raiting={movie.raiting}
-            description={movie.description}
+            watched={movie.watched}
           />
         ))}
     </MoviesWrapper>

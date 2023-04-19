@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Movie = ({ title, year, genre, poster, raiting, description }) => {
+export const Movie = ({ title, year, genre, poster, raiting, watched }) => {
   return (
     <MovieContainer>
       <Title>{title}</Title>
@@ -13,7 +13,7 @@ export const Movie = ({ title, year, genre, poster, raiting, description }) => {
         <Poster src={poster} />
       </PosterContainer>
       <Text>IMDB: {raiting}</Text>
-      <Text>{description}</Text>
+      <Text>{watched ? "✅" : "☑️"}</Text>
     </MovieContainer>
   );
 };
@@ -23,8 +23,8 @@ const MovieContainer = styled.div`
   flex-flow: column wrap;
   justify-content: space-evenly;
   align-items: center;
-  height: 21rem;
-  width: 17rem;
+  height: 15rem;
+  width: 10rem;
   border: solid #ececec;
   padding: 0.5rem;
   margin: 1rem;
@@ -32,20 +32,21 @@ const MovieContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 1.2rem;
+  font-size: 1rem;
   padding: 0.3rem;
   margin: 0;
+  height: 12%;
 `;
 
 const Wrapper = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 0.3rem;
   align-items: center;
   margin: 0;
 `;
 
 const Poster = styled.img`
-  width: 50%;
+  width: 90%;
 `;
 
 const PosterContainer = styled.div`
@@ -54,7 +55,7 @@ const PosterContainer = styled.div`
   width: 55%;
 `;
 const Text = styled.p`
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   color: grey;
   margin: 0;
 `;
